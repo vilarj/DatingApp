@@ -29,5 +29,22 @@ namespace DatingApp.Entities
         ///     kingjames
         /// </example>
         public string UserName { get; set;}
+
+        /// <summary>
+        ///     User password that is hashed for security reasons
+        /// </summary>
+        /// <value>
+        ///     byte[]
+        /// </value
+        public byte[] PasswordHash { get; set; }
+        
+        /// <summary>
+        ///     User password hashed - the password salt method is applied for
+        ///     security reasons.
+        /// </summary>
+        /// <value>
+        ///     byte[]
+        /// </value>
+        public byte[] PasswordSalt {get; set; }
     }
 }
