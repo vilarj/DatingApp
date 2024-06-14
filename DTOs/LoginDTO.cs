@@ -1,8 +1,10 @@
+
+
 using System.ComponentModel.DataAnnotations;
 
 namespace DatingApp.DTOs
 {
-    public class RegisterDTO
+    public class LoginDTO
     {
         /// <summary>
         ///     Name of the user matching the unique identifer.
@@ -26,5 +28,7 @@ namespace DatingApp.DTOs
         /// </value
         [Required]
         public string Password { get; set; }
+
+        
     }
 }

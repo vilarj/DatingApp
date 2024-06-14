@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 
 namespace DatingApp.Entities
 {
@@ -28,6 +29,7 @@ namespace DatingApp.Entities
         /// <example>
         ///     kingjames
         /// </example>
+        [Required]
         public string UserName { get; set;}
 
         /// <summary>
