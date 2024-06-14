@@ -22,7 +22,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 // Allowing HTTP requests to come from the passed in address
-app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
 app.MapControllers();
 
