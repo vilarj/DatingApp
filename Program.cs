@@ -1,18 +1,19 @@
+using System.Text;
 using DatingApp.Data;
+using DatingApp.Extensions;
+using DatingApp.Interfaces;
+using DatingApp.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
-builder.Services.AddDbContext<DatingAppDbContext>(options =>{
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-// Service to handle HttpRequests
-builder.Services.AddCors();
+builder.Services.AddApplicationServices(builder.Configuration);
+builder.Services.AddIdentityExtensions(builder.Configuration);
 
 var app = builder.Build();
 
@@ -23,6 +24,10 @@ app.UseAuthorization();
 
 // Allowing HTTP requests to come from the passed in address
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+
+// JWT Bearer authentication & authorization
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
