@@ -1,5 +1,3 @@
-
-
 using System.ComponentModel.DataAnnotations;
 
 namespace DatingApp.DTOs
@@ -29,6 +27,6 @@ namespace DatingApp.DTOs
         [Required]
         public string Password { get; set; }
 
-        
+
     }
 }
