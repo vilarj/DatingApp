@@ -10,5 +10,5 @@ DatingApp is a modern web application designed to connect people through an intu
     Responsive Design: Fully responsive design for optimal experience on all devices.
 
 # Technologies Used
-    Backend: .NET Core 8, C#, Sqlite, Entity Framework Core
-    Authentication: JWT (JSON Web Tokens)
+    Backend: .NET Core 8, C#, Sqlite, Entity Framework Core.
+    Authentication: JWT (JSON Web Tokens).
